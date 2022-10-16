@@ -29,7 +29,7 @@ public class fComprador {
     
     modelo=new DefaultTableModel(null,titulos);
     
-    sSQL="select * from vComprador where nombre_v like '%"+buscar+"%' order by codigo_v";
+    sSQL="select * from vcomprador where nombre_v like '%"+buscar+"%' order by codigo_v";
     try{
         //Declaro variable de tipo Statement 
     Statement st= (Statement) cn.createStatement();
@@ -53,7 +53,7 @@ public class fComprador {
     }
     
       public boolean insertar (vComprador dts){
-       sSQL="insert into vComprador (nombre_v,apellidos_v,dni_v,fecha_nacimiento_v)" + "values (?,?,?,?)";
+       sSQL="insert into vcomprador (nombre_v,apellidos_v,dni_v,fecha_nacimiento_v)" + "values (?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
@@ -78,7 +78,7 @@ public class fComprador {
    }
    
     public boolean editar (vComprador dts){
-       sSQL="update vComprador set nombre_v=?,apellidos_v=?,dni_v=?,fecha_nacimiento_v=?"+
+       sSQL="update vcomprador set nombre_v=?,apellidos_v=?,dni_v=?,fecha_nacimiento_v=?"+
                " where codigo_v=?";
            
        
@@ -106,7 +106,7 @@ public class fComprador {
    } 
   
      public boolean eliminar (vComprador dts){
-       sSQL="delete from vComprador where codigo_v=?";
+       sSQL="delete from vcomprador where codigo_v=?";
        
        try {
            

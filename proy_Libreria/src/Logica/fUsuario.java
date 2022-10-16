@@ -26,7 +26,7 @@ public class fUsuario {
     
     modelo=new DefaultTableModel(null,titulos);
     
-    sSQL="select * from vUsuario where nombre like '%"+buscar+"%' order by codigo_u";
+    sSQL="select * from vusuario where nombre like '%"+buscar+"%' order by codigo_u";
     try{
         //Declaro variable de tipo Statement 
     Statement st= (Statement) cn.createStatement();
@@ -52,7 +52,7 @@ public class fUsuario {
     }
     
       public boolean insertar (vUsuario dts){
-       sSQL="insert into vUsuario (nombre_u,apellidos_u,dni_u,fecha_nacimiento_u,usuario_u,password_u)" + "values (?,?,?,?,?,?)";
+       sSQL="insert into vusuario (nombre_u,apellidos_u,dni_u,fecha_nacimiento_u,usuario_u,password_u)" + "values (?,?,?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
@@ -79,7 +79,7 @@ public class fUsuario {
    }
    
     public boolean editar (vUsuario dts){
-       sSQL="update vUsuario set nombre_u=?,apellidos_u=?,dni_u=?,fecha_nacimiento_u=?,usuario_u=?,password_u=? "+
+       sSQL="update vusuario set nombre_u=?,apellidos_u=?,dni_u=?,fecha_nacimiento_u=?,usuario_u=?,password_u=? "+
                " where codigo_u=?";
            
        
@@ -109,7 +109,7 @@ public class fUsuario {
    } 
   
      public boolean eliminar (vUsuario dts){
-       sSQL="delete from vUsuario where codigo_u=?";
+       sSQL="delete from vusuario where codigo_u=?";
        
        try {
            

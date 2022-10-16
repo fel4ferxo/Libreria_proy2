@@ -27,7 +27,7 @@ public class fLibro {
     
     modelo=new DefaultTableModel(null,titulos);
     
-    sSQL="select * from vLibro where nombre_l like '%"+buscar+"%' order by codigo";
+    sSQL="select * from vlibro where nombre_l like '%"+buscar+"%' order by codigo";
     try{
         //Declaro variable de tipo Statement 
     Statement st= (Statement) cn.createStatement();
@@ -54,7 +54,7 @@ public class fLibro {
     }
     
       public boolean insertar (vLibro dts){
-       sSQL="insert into vLibro (codigo,nombre_l,autor_l,aniopub_l,volumen_l,edicion_l,descripcion_l,precio_l)" + "values (?,?,?,?,?,?,?)";
+       sSQL="insert into vlibro (codigo,nombre_l,autor_l,aniopub_l,volumen_l,edicion_l,descripcion_l,precio_l)" + "values (?,?,?,?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
@@ -81,7 +81,7 @@ public class fLibro {
    }
    
     public boolean editar (vLibro dts){
-       sSQL="update vLibro set nombre_l=?,autor_l=?,aniopub_l=?,volumen_l=?,edicion_l=?,descripcion_l=?,precio_l=? "+
+       sSQL="update vlibro set nombre_l=?,autor_l=?,aniopub_l=?,volumen_l=?,edicion_l=?,descripcion_l=?,precio_l=? "+
                " where codigo=?";
            
        
@@ -112,7 +112,7 @@ public class fLibro {
    } 
   
      public boolean eliminar (vLibro dts){
-       sSQL="delete from vLibro where codigo=?";
+       sSQL="delete from vlibro where codigo=?";
        
        try {
            
