@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2022 at 02:16 AM
+-- Generation Time: Oct 20, 2022 at 05:41 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -49,7 +49,8 @@ CREATE TABLE `vlibro` (
   `volumen_l` varchar(3) DEFAULT NULL,
   `edicion_l` varchar(2) DEFAULT NULL,
   `descripcion_l` varchar(200) DEFAULT NULL,
-  `precio_l` float NOT NULL
+  `precio_l` float NOT NULL,
+  `imagen_link` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
