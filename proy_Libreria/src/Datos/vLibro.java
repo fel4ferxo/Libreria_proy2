@@ -32,6 +32,10 @@ public class vLibro {
         this.imagen_link = imagen_link;
     }
 
+    public vLibro() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     //Constructor Libros
     
     public int getCodigo() {

@@ -131,6 +131,37 @@ public class fUsuario {
            return false;
        }
    }
+     
+   public boolean login (vUsuario dts){
+       
+       PreparedStatement ps = null;
+       ResultSet rs = null;
+       
+       
+       String sql = "SELECT codigo_u, usuario_u, password_u FROM vusuario WHERE vusuario = ?";
+       
+       try{
+           ps = cn.prepareStatement(sql);
+           ps.setString(1, dts.getUsuario_u());
+           rs = ps.executeQuery();
+           
+           if(rs.next())
+           {
+               if(dts.getPassword_u().equals(rs.getString(3))){
+                   dts.setCodigo_u(rs.getInt(1));
+                   dts.setUsuario_u(rs.getString(2));
+                   dts.setPassword_u(rs.getString(3));
+                   return true;
+               }else{
+                   return false;
+               }
+           }
+           return false;
+       }catch(SQLException ex){
+           return false;
+       }
+   }
+
  
     
 }

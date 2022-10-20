@@ -28,6 +28,10 @@ public class vUsuario {
         this.password_u = password_u;
     }
 
+    public vUsuario() {
+        
+    }
+
     public int getCodigo_u() {
         return codigo_u;
     }
