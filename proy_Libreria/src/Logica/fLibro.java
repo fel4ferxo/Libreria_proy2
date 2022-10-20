@@ -22,7 +22,7 @@ public class fLibro {
     public DefaultTableModel mostrar(String buscar)
     {
     DefaultTableModel modelo;
-    String [] titulos={"codigo","nombre_l","autor_l","aniopub_l","volumen_l","edicion_l","descripcion_l","precio_l"};
+    String [] titulos={"codigo","nombre_l","autor_l","aniopub_l","volumen_l","edicion_l","descripcion_l","precio_l", "imagen_link"};
     String [] registro=new String [8];
     
     modelo=new DefaultTableModel(null,titulos);
@@ -44,6 +44,7 @@ public class fLibro {
        registro [5]=rs.getString("edicion_l");
        registro [6]=rs.getString("descripcion_l");
        registro [7]=rs.getString("precio_l");
+       registro [8]=rs.getString("imagen_link");
        modelo.addRow(registro);
     }
     return modelo;
@@ -54,7 +55,7 @@ public class fLibro {
     }
     
       public boolean insertar (vLibro dts){
-       sSQL="insert into vlibro (codigo,nombre_l,autor_l,aniopub_l,volumen_l,edicion_l,descripcion_l,precio_l)" + "values (?,?,?,?,?,?,?)";
+       sSQL="insert into vlibro (codigo,nombre_l,autor_l,aniopub_l,volumen_l,edicion_l,descripcion_l,precio_l,imagen_link)" + "values (?,?,?,?,?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
@@ -65,6 +66,7 @@ public class fLibro {
            pst.setString(5, dts.getEdicion_l());
            pst.setString(6, dts.getDescripcion_l());
            pst.setString(7, dts.getPrecio_l());
+           pst.setString(8, dts.getImagen_link());
            int n=pst.executeUpdate();
            
            if (n!=0){
@@ -81,7 +83,7 @@ public class fLibro {
    }
    
     public boolean editar (vLibro dts){
-       sSQL="update vlibro set nombre_l=?,autor_l=?,aniopub_l=?,volumen_l=?,edicion_l=?,descripcion_l=?,precio_l=? "+
+       sSQL="update vlibro set nombre_l=?,autor_l=?,aniopub_l=?,volumen_l=?,edicion_l=?,descripcion_l=?,precio_l=?,imagen_link=? "+
                " where codigo=?";
            
        
@@ -95,6 +97,7 @@ public class fLibro {
            pst.setString(5, dts.getEdicion_l());
            pst.setString(6, dts.getDescripcion_l());
            pst.setString(7, dts.getPrecio_l());
+           pst.setString(8, dts.getImagen_link());
            
            int n=pst.executeUpdate();
            

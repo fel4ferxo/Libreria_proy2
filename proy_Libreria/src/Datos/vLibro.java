@@ -18,8 +18,9 @@ public class vLibro {
     private String edicion_l;
     private String descripcion_l;
     private String precio_l;
+    private String imagen_link;
 
-    public vLibro(int codigo, String nombre_l, String autor_l, String aniopub_l, String volumen_l, String edicion_l, String descripcion_l, String precio_l) {
+    public vLibro(int codigo, String nombre_l, String autor_l, String aniopub_l, String volumen_l, String edicion_l, String descripcion_l, String precio_l, String imagen_link) {
         this.codigo = codigo;
         this.nombre_l = nombre_l;
         this.autor_l = autor_l;
@@ -28,6 +29,7 @@ public class vLibro {
         this.edicion_l = edicion_l;
         this.descripcion_l = descripcion_l;
         this.precio_l = precio_l;
+        this.imagen_link = imagen_link;
     }
 
     //Constructor Libros
@@ -94,6 +96,14 @@ public class vLibro {
 
     public void setPrecio_l(String precio_l) {
         this.precio_l = precio_l;
+    }
+
+    public String getImagen_link() {
+        return imagen_link;
+    }
+
+    public void setImagen_link(String imagen_link) {
+        this.imagen_link = imagen_link;
     }
           
 }
