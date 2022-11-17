@@ -109,5 +109,13 @@ public class vLibro {
     public void setImagen_link(String imagen_link) {
         this.imagen_link = imagen_link;
     }
+
+    public void setSize(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setLocation(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
           
 }
